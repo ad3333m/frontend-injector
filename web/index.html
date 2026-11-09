@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Frontend Injector</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Frontend Injector</h1>
+    <p>Puts HomeNX, CardsNX and NXToggle on your modded Switch through the USB cable.</p>
+  </header>
+
+  <section class="device" id="device" data-state="looking">
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <h2 id="deviceTitle">Looking for your Switch…</h2>
+      <p id="deviceText"></p>
+      <p id="howto">Plug it into this PC. On the Switch, open <b>Hekate</b> › Tools › USB Tools › SD Card, or start <b>MTP</b> in DBI, Sphaira or HomeNX.</p>
+    </div>
+  </section>
+
+  <ul class="payload" aria-label="What gets injected">
+    <li><img src="cardsnx.jpg" alt="" width="40" height="40"><span><b>CardsNX</b><small>Card row</small></span></li>
+    <li><img src="homenx.jpg" alt="" width="40" height="40"><span><b>HomeNX</b><small>Wii U style</small></span></li>
+    <li><img src="nxtoggle.jpg" alt="" width="40" height="40"><span><b>NXToggle</b><small>On, off, style</small></span></li>
+  </ul>
+
+  <div class="action">
+    <button type="button" class="go" id="go" disabled>Inject</button>
+    <div class="slot">
+      <div class="bar" id="bar" hidden><i id="fill"></i></div>
+      <button type="button" class="off" id="off" disabled>Turn off the frontend</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+  </div>
+</main>
+
+<dialog id="first" aria-labelledby="firstTitle">
+  <h2 id="firstTitle">What do you want to use first?</h2>
+  <div class="looks">
+    <button type="button" class="look" data-look="cards">
+      <img src="cardsnx.jpg" alt="" width="76" height="76">
+      <b>CardsNX</b>
+      <small>Box-art cards in a row</small>
+    </button>
+    <button type="button" class="look" data-look="homenx">
+      <img src="homenx.jpg" alt="" width="76" height="76">
+      <b>HomeNX</b>
+      <small>Wii U style grid</small>
+    </button>
+  </div>
+  <p class="note">You can turn off the frontend or change styles in NXToggle.</p>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
